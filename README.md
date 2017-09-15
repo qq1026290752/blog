@@ -4,8 +4,10 @@
 
 * 本项目后台为Java的`spring+springmvc+mybatis `
 
-* 项目启动方式 `npm run dist`
+* 项目启动方式 `npm run dev`
 
-* 后台API地址为：
+* 项目打包方式 `npm run publish` 
 
-* 项目线上地址为: [打开连接](http://ws.28ph.cn)
+* 后台API地址为 ： http://ws.28ph.cn (已部署可以直接看见效果)
+
+* 项目线上地址为 : [打开连接](http://ws.28ph.cn)

@@ -8,11 +8,13 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 module.exports = {
     entry: {
     		app:path.resolve(__dirname,'src/main.js'),
-			vendors:['vue']		
-		},
+			vue:['vue','vuex','vue-resource'],
+			element:['element-ui'],
+			mEditor:['mavon-editor']
+	},
     output: {
         path: path.resolve(__dirname, 'dist/app'),
-		filename: 'static/js/[name].js',
+		filename: 'static/js/app_[name].js',
     },
     module: {
         loaders: [ 
@@ -56,9 +58,9 @@ module.exports = {
     },
     plugins:[
     	new webpack.optimize.CommonsChunkPlugin({ 
-		    name: 'vendor', 
-		    filename: 'vendor.bundle.js', 
-		    minChunks: Infinity 
+		    name: ['vue','element','mEditor'], 
+		    filename: 'static/js/vendor.[name].js', 
+		    chunks: 4		
 		}),
 		new UglifyJsPlugin({
 			compress:{
