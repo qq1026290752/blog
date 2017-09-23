@@ -113,6 +113,10 @@ export default {
 		this.getNewsAticle();
 		this.getCatalogue();
 	},
+	//钩子函数 关闭页面的时候调用
+	deactivated(){ 
+		ws.clonse();
+	},
 	methods:{
 		getNewsAticle(){
 			this.$http.jsonp(servicePath +'article/getNewsAticle').then(function(response){ 
@@ -159,10 +163,7 @@ export default {
           			 message: '博主新发布了一篇博客,赶快去围观吧',
 					 duration:0  
 				});
-			};  
-			ws.onclose = function () {
-				ws.clonse();
-			};  
+			};   
 		}
 	}
 }
